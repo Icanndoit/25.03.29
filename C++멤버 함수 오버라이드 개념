@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+
+class Car {  // 기본 클래스
+protected:
+	int num;
+	double gas;
+public:
+	Car();
+	void setCar(int n, double g);
+	void show();  // 기본 클래스의 show() 멤버 함수
+};
+
+class RacingCar : public Car {  // 자식 클래스
+private:
+	int cource;
+public:
+	RacingCar();
+	void setCource(int c);
+	void show();  // 파생 클래스의 show 멤버 함수
+};
+
+Car::Car() {
+	num = 0, gas = 0.0;
+	cout << "지동차가 만들어졌습니다.\n";
+}
+
+void Car::setCar(int n, double g) {
+	num = n, gas = g;
+	cout << "차량 번호를 " << num << "으로, 연료량을 " << gas
+		<< "으로 바꾸었습니다.\n";
+}
+
+void Car::show() {
+	cout << "차량 번호는 " << num << "입니다.\n";
+	cout << "연료량은 " << gas << "입니다.\n";
+}
+
+RacingCar::RacingCar() {
+	cource = 0;
+	cout << "레이싱 카가 만들어졌습니다.\n";
+}
+
+void RacingCar::setCource(int c) {
+	cource = c;
+	cout << "코스 번호를 " << cource << "로 정했습니다.\n";
+}
+
+void RacingCar::show() {
+	cout << "레이싱 카의 차량 번호는 " << num << "입니다.\n";
+	cout << "연료량은 " << gas << " 입니다.\n";
+	cout << "코스 번호는 " << cource << "입니다.\n";
+}
+
+int main(void) {
+	RacingCar rccar1;
+	rccar1.setCar(1234, 20.5);
+	rccar1.setCource(5);
+
+	rccar1.show();  // 멤버 함수 선언
+
+
+	return 0;
+}
