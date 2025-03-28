@@ -58,6 +58,7 @@ int main(void) {
 	rccar1.setCource(5);
 
 	rccar1.show();  // 멤버 함수 선언
+	// 오버라이드 : 파생 클래스의 함수가 기본 클래스의 함수를 대신하는것
 
 
 	return 0;
