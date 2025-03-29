@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+
+//struct Node {
+//	int data;
+//	Node* LinkLeft;
+//	Node* LinkRight;
+//};
+//
+//struct RootNode {
+//	int data;
+//	Node* LinkLeft;
+//	Node* LinkRight;
+//};
+
+class Node {
+public:
+	int data;
+	Node(int value);
+protected:
+	Node* LinkLeft;
+	Node* LinkRight;
+private:
+	
+};
+
+Node::Node(int value) {
+	data = value;
+	LinkLeft = LinkRight = nullptr;
+}
+
+class RootNode :public Node {
+public:
+	RootNode(int value);
+};
+
+RootNode::RootNode(int value) :Node(value) {
+	data = value;
+	LinkLeft = LinkRight = nullptr;
+}
+
+RootNode root(50);
+
+int main() {
+
+	Node n1(25); Node n2(75); Node n3(10);
+	Node n4(33); Node n5(56); Node n6(89);
+	Node n7(4); Node n8(11); Node n9(30);
+	Node n10(40); Node n11(52); Node n12(61);
+	Node n13(82); Node n14(95);
+
+
+	return 0;
+}
